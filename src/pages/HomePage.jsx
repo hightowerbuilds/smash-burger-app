@@ -28,7 +28,7 @@ export default function HomePage() {
     </div>
    
     <div>
-    <img src={smashBurgerLogo}/>
+    <img style={{ height: 'auto', width: 'auto'}} src={smashBurgerLogo}/>
     </div>
 
     </div>
