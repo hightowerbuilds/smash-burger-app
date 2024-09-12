@@ -1,32 +1,39 @@
-
+import './MenuPage.css'
 import NavBar from "../../components/NavBar/NavBar"
 
 export default function MenuPage() {
   return (
-    <div>
+    <div className='menuPageMainBox'>
       <NavBar />
+<br />
+    <div className='menuPageInnerBox' >
+        <p className='menuPageSmashHeading'>SMASH BURGER</p>
+      
+        <p className='menuPageMenuBox'>
 
-      <div>
-      <h1 className='homePageSmashHeading'>SMASH BURGER</h1>
+        <p className='menuPageSectionTitle'>Burgers</p>
 
-<p style={{ margin: '3%'}}>
-ground beef smashed and grilled to deliciousness.
+        <ul style={{ margin: '3%'}}>
+          <p className="menuPageMenuItem">single patty $5</p>
+          <p className="menuPageMenuItem">double patty $10</p>
+          <p className="menuPageMenuItem">triple patty $15</p>
+          <p className="menuPageMenuItem">million patty $2,000</p>
+        </ul>
 
-<ul style={{ margin: '3%'}}>
- <li>
-   single patty $5
- </li>
- <li>
-   double patty $10
- </li>
- <li>
-   triple patty $15
- </li>
- <li>
-   million patty $20
- </li>
-</ul>
-</p>
+        <p className='menuPageSectionTitle'>Fries</p>
+          <ul style={{ margin: '3%'}}>
+            <p className="menuPageMenuItem">fries $10</p>
+            <p className="menuPageMenuItem">alotta fries $20</p>
+          </ul>
+
+        <p className='menuPageSectionTitle'>Salads</p>
+          <ul style={{ margin: '3%'}}>
+            <p className="menuPageMenuItem">bacon and eggs $15</p>
+            <p className="menuPageMenuItem">tropical paradise $17</p>
+          </ul>
+
+
+        </p>
 
       </div>
     </div>
