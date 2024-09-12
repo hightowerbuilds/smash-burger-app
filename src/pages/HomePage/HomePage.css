@@ -1,0 +1,27 @@
+.homePageMainBox {
+    width: 100%;
+    height: 100vh;
+}
+
+.homePageNavBarMainBox {
+    display: inline-flex;
+    width: 100%;
+}
+
+.homePageNavBarSubBox {
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.homePageSectionOuterBox {
+    padding: 5%;
+}
+
+.homePageSectionSubBox {
+    width: 100%;
+    height: 40vh;
+    border: 10px dodgerblue solid;
+    border-radius: 1%;
+}
