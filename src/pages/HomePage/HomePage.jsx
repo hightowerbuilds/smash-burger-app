@@ -11,7 +11,17 @@ export default function HomePage() {
 
     <div className='homePageSectionOuterBox'>
     <div className='homePageSectionSubBox'>
-        home page contents
+    <div>
+      calendar
+    </div>
+
+    <div>
+      meet the chefs
+    </div>
+
+    <div>
+      history of the Smash Burger
+    </div>
     </div>
     </div>
 

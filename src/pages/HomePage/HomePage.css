@@ -12,4 +12,11 @@
     height: 700px;
     border: 10px dodgerblue solid;
     border-radius: 1%;
+    font-family: monospace;
+    font-size: 22px;
+}
+
+.homePageSmashHeading {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 2%;
 }
