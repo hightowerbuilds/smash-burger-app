@@ -6,6 +6,10 @@
 .homePageNavBarMainBox {
     display: inline-flex;
     width: 100%;
+    border-bottom: 12px orangered dotted;
+}
+.homePageNavBarLogo {
+    margin: .5%;
 }
 
 .homePageNavBarSubBox {
@@ -15,8 +19,15 @@
     align-items: center;
 }
 
+.homePageNavBarFontSpecial {
+    font-family: "Fascinate Inline", system-ui;
+    font-weight: 900;
+    color: orangered;
+    font-size: 32px;
+}
+
 .homePageSectionOuterBox {
-    padding: 5%;
+    padding: 3%;
 }
 
 .homePageSectionSubBox {

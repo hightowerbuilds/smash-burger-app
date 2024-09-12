@@ -13,13 +13,14 @@ export default function HomePage() {
     <div className="homePageMainBox">
   
     <div className="homePageNavBarMainBox"> 
-    <NavLink to='/'><img src={smashBurgerLogo} /></NavLink>
+
+    <NavLink className='homePageNavBarLogo' to='/'><img src={smashBurgerLogo} /></NavLink>
 
     <div className="homePageNavBarSubBox">
-    <NavLink to='/'><img src={homeLogo} /></NavLink>  
-    <NavLink to='/menu'><img src={menuLogo} /></NavLink>
-    <NavLink to='/media'><img src={smashLogo} /></NavLink>
-    <NavLink to='/store'><img src={storeLogo} /></NavLink>
+    <NavLink className='homePageNavBarFontSpecial' to='/'>HOME</NavLink>  
+    <NavLink className='homePageNavBarFontSpecial' to='/menu'>MENU</NavLink>
+    <NavLink className='homePageNavBarFontSpecial' to='/media'>MEDIA</NavLink>
+    <NavLink className='homePageNavBarFontSpecial' to='/store'>STORE</NavLink>
     </div>
     </div>
 
