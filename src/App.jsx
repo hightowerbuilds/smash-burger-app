@@ -1,9 +1,9 @@
 
 import { Route, Routes } from "react-router-dom"
-import HomePage from "./pages/HomePage"
-import MediaPage from "./pages/MediaPage"
-import StorePage from "./pages/StorePage"
-import MenuPage from "./pages/MenuPage"
+import HomePage from "./pages/HomePage/HomePage"
+import MediaPage from "./pages/MediaPage/MediaPage"
+import StorePage from "./pages/StorePage/StorePage"
+import MenuPage from "./pages/MenuPage/MenuPage"
 
 
 export default function App() {
