@@ -2,10 +2,7 @@
 import './HomePage.css'
 import { NavLink } from "react-router-dom";
 import smashBurgerLogo from '../../images/browser/smashBurgerLogo.jpg'
-import homeLogo from '../../images/browser/homeLogo.jpg'
-import menuLogo from '../../images/browser/menuLogo.jpg'
-import smashLogo from '../../images/browser/smashLogo.jpg'
-import storeLogo from '../../images/browser/storeLogo.jpg'
+
 
 
 export default function HomePage() {
