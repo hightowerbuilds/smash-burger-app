@@ -1,11 +1,11 @@
-import { NavLink } from "react-router-dom";
+
+import NavBar from "../../components/NavBar/NavBar";
 
 
 export default function MediaPage() {
   return (
     <div>
-     <h2>Media</h2>
-      <NavLink to='/'>home</NavLink>
+     <NavBar />
 
     </div>
   )
