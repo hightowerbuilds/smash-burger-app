@@ -7,6 +7,7 @@ export default function MediaPage() {
     <div>
      <NavBar />
 
+    media
     </div>
   )
 }

@@ -1,12 +1,12 @@
-import smashBurgerLogo from '../../images/browser/smashBurgerLogo.jpg'
-import { NavLink } from 'react-router-dom'
+import NavBar from '../../components/NavBar/NavBar'
+
 
 export default function StorePage() {
   return (
     <div>
-      <NavLink to='/'><img src={smashBurgerLogo} /></NavLink>
-      <h2>StorePage</h2>
-    
+      <NavBar />
+
+      store
     </div>
   )
 }
