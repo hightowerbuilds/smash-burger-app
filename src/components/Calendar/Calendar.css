@@ -16,11 +16,13 @@
 
 .calendarDayBox {
     height: 5vh;
-    width: 5vh;
+    width: fit-content;
     border: 2px black solid;
     margin: 1%;
 }
     
 .calendarSubBox {
     display: inline-flex;
+    font-size: 16px;
+    width: fit-content;
 }

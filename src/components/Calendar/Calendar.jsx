@@ -3,23 +3,56 @@ import './Calendar.css'
 
 export default function Calendar() {
 
+{/**
+    
+how to build a calendar
 
-const [ day, setDay ] = useState('')
-const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
+- need to set month
+- need to have a first day of the month ie, tues, fri...
+- need length of month
+- need numbers presented
+- cycle through days of week until reach end of month
+    
+*/}
 
-const week = () => {
-   return (
+const [ month, setMonth ] = useState('')
+const [ firstDay, setFirstDay ] = useState('');
+const [ monthLength, setMonthLength ] = useState(0);
+
+const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+    ];
+
+const days = [
+    'monday', 
+    'tuesday', 
+    'wednesday', 
+    'thursday', 
+    'friday', 
+    'saturday', 
+    'sunday'
+    ];
+
+const week = () => { 
+    return (
    days.map((day) => (
-    <div key={day}>{day}</div>
-   ))
-   )}
+    <div className='calendarDayBox' key={day}>{day}</div>
+   )))}
 
   return (
     <div className="calendarMainBox">
-
-        <p className='calendarHeading'>
-            Calendar
-        </p>
+        <p className='calendarHeading'>Calendar</p>
 
 <div className='calendarSubBox'>
     {week()}
