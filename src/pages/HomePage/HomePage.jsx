@@ -1,4 +1,6 @@
 
+import Calendar from '../../components/Calendar/Calendar'
+import Gallery from '../../components/Gallery/Gallery'
 import NavBar from '../../components/NavBar/NavBar'
 import './HomePage.css'
 
@@ -12,11 +14,11 @@ export default function HomePage() {
     <div className='homePageSectionOuterBox'>
     <div className='homePageSectionSubBox'>
     <div>
-      calendar
+     <Calendar />
     </div>
 
     <div>
-      meet the chefs
+     <Gallery />
     </div>
 
     <div>

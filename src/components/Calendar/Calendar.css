@@ -1,0 +1,14 @@
+
+.calendarMainBox {
+    width: 20vh;
+    height: 100%;
+    border: 4px seagreen solid;
+    margin: 2%;
+}
+
+.calendarHeading {
+    width: 100%;
+    margin: 2%;
+    display: flex;
+    justify-content: center;
+}
