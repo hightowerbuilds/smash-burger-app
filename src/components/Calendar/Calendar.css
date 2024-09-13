@@ -1,14 +1,26 @@
 
 .calendarMainBox {
-    width: 20vh;
-    height: 100%;
+    width: 100%;
+    height: 95%;
     border: 4px seagreen solid;
     margin: 2%;
 }
 
 .calendarHeading {
     width: 100%;
-    margin: 2%;
     display: flex;
     justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
+    font-size: 32px;
+}
+
+.calendarDayBox {
+    height: 5vh;
+    width: 5vh;
+    border: 2px black solid;
+}
+    
+.calendarSubBox {
+    display: inline-flex;
 }

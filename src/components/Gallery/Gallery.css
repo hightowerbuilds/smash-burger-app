@@ -1,0 +1,16 @@
+
+.galleryMainBox {
+    width: 100%;
+    height: 95%;
+    border: 4px seagreen solid;
+    margin: 2%;
+}
+
+.galleryHeading {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
+    font-size: 32px;
+}

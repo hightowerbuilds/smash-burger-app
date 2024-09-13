@@ -8,6 +8,31 @@ export default function Calendar() {
             Calendar
         </p>
 
+<div className='calendarSubBox'>
+    <div className='calendarDayBox'>
+        day
+    </div>
+    <div className='calendarDayBox'>
+        day
+    </div>
+    <div className='calendarDayBox'>
+        day
+    </div>
+    <div className='calendarDayBox'>
+        day
+    </div>
+    <div className='calendarDayBox'>
+        day
+    </div>
+    <div className='calendarDayBox'>
+        day
+    </div>
+    <div className='calendarDayBox'>
+        day
+    </div>
+</div>
+
+
     </div>
   )
 }

@@ -21,9 +21,7 @@ export default function HomePage() {
      <Gallery />
     </div>
 
-    <div>
-      history of the Smash Burger
-    </div>
+   
     </div>
     </div>
 
