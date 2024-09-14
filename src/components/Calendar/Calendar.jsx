@@ -88,8 +88,18 @@ const monthDays = {
     ["monday", 37]
 ];
 
-const newDays = days.map(dayData => [dayData[0], dayData[1]]);
+const newDays = {
+    sunday: days.map(dayData => [dayData[0], dayData[1]]),
+    monday: days.map(dayData => [dayData[0], dayData[1] - 1] ),
+    tuesday: days.map(dayData => [dayData[0], dayData[1] - 2] ),
+    wednesday: days.map(dayData => [dayData[0], dayData[1] - 3] ),
+    thursday: days.map(dayData => [dayData[0], dayData[1] - 4] ),
+    friday: days.map(dayData => [dayData[0], dayData[1] - 5] ),
+    saturday: days.map(dayData => [dayData[0], dayData[1] - 6] ),
+}
+
     {/**
+
         create object of month with key pairs
         that are date and day of week
 
@@ -109,16 +119,15 @@ const newDays = days.map(dayData => [dayData[0], dayData[1]]);
         that will be X many days from sunday 
         eg. 0=sun 2=tue etc
 
-
-        */}
+    */}
 
 
 
 
 const week = () => { 
     return (
-   newDays.map((day) => (
-    <div className='calendarDayBox' key={day.keys}>{day}</div>
+   newDays.friday.map((day) => (
+    day[1] < 1 || day[1] > 31 ? <div className='calendarDayBox' key={day[1]}>{day[0]}</div> : <div className='calendarDayBox' key={day.keys}>{day}</div>
    )))}
 
   return (
@@ -130,8 +139,8 @@ const week = () => {
 
     {console.log(week())}
 </div>
-{console.log(newDays)}
-
+{console.log(newDays.sunday)}
+{console.log(newDays.monday)}
     </div>
   )
 }
