@@ -48,21 +48,77 @@ const monthDays = {
     "November": 30,
     "December": 31
   };
+  const days = [
+    ["sunday", 1], 
+    ["monday", 2], 
+    ["tuesday", 3], 
+    ["wednesday", 4], 
+    ["thursday", 5], 
+    ["friday", 6], 
+    ["saturday", 7], 
+    ["sunday", 8], 
+    ["monday", 9], 
+    ["tuesday", 10], 
+    ["wednesday", 11], 
+    ["thursday", 12], 
+    ["friday", 13], 
+    ["saturday", 14], 
+    ["sunday", 15], 
+    ["monday", 16], 
+    ["tuesday", 17], 
+    ["wednesday", 18], 
+    ["thursday", 19], 
+    ["friday", 20], 
+    ["saturday", 21], 
+    ["sunday", 22], 
+    ["monday", 23], 
+    ["tuesday", 24], 
+    ["wednesday", 25], 
+    ["thursday", 26], 
+    ["friday", 27], 
+    ["saturday", 28], 
+    ["sunday", 29], 
+    ["monday", 30], 
+    ["tuesday", 31],
+    ["wednesday", 32],
+    ["thursday", 33],
+    ["friday", 34],
+    ["saturday", 35],
+    ["sunday", 36],
+    ["monday", 37]
+];
 
-const days = [
-    'monday', 
-    'tuesday', 
-    'wednesday', 
-    'thursday', 
-    'friday', 
-    'saturday', 
-    'sunday'
-    ];
+const newDays = days.map(dayData => [dayData[0], dayData[1]]);
+    {/**
+        create object of month with key pairs
+        that are date and day of week
+
+        if there are 31 days in a month and the 
+        first day of the week is tuesday the algo
+        will begin by assigning 1st to Tuesday (thus
+        putting it in the appropraite place on 
+        a common calendar) once the pirs are made 
+        the calendar can be created
+
+        so it finds the end of the week and continues 
+        until we reach the end of the month
+
+        new thought:
+
+        find first day of the month
+        that will be X many days from sunday 
+        eg. 0=sun 2=tue etc
+
+
+        */}
+
+
+
 
 const week = () => { 
     return (
-   days.map((day) => (
-    <div className='calendarDayBox' key={day}>{day}</div>
+   newDays.map((day) => (
+    <div className='calendarDayBox' key={day.keys}>{day}</div>
    )))}
 
   return (
@@ -71,9 +127,10 @@ const week = () => {
 
 <div className='calendarSubBox'>
     {week()}
+
     {console.log(week())}
 </div>
-
+{console.log(newDays)}
 
     </div>
   )
