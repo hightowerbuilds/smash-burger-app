@@ -18,6 +18,7 @@ how to build a calendar
 const [ month, setMonth ] = useState('')
 const [ firstDay, setFirstDay ] = useState('');
 const [ monthLength, setMonthLength ] = useState(0);
+const [selectedMonth, setSelectedMonth] = useState('');
 
 const months = [
     "January",
@@ -98,49 +99,45 @@ const newDays = {
     saturday: days.map(dayData => [dayData[0], dayData[1] - 6] ),
 }
 
-    {/**
-
-        create object of month with key pairs
-        that are date and day of week
-
-        if there are 31 days in a month and the 
-        first day of the week is tuesday the algo
-        will begin by assigning 1st to Tuesday (thus
-        putting it in the appropraite place on 
-        a common calendar) once the pirs are made 
-        the calendar can be created
-
-        so it finds the end of the week and continues 
-        until we reach the end of the month
-
-        new thought:
-
-        find first day of the month
-        that will be X many days from sunday 
-        eg. 0=sun 2=tue etc
-
-    */}
-
-
-
-
 const week = () => { 
     return (
-   newDays.friday.map((day) => (
-    day[1] < 1 || day[1] > 31 ? <div className='calendarDayBox' key={day[1]}>{day[0]}</div> : <div className='calendarDayBox' key={day.keys}>{day}</div>
+   newDays.sunday.map((day) => (
+    day[1] < 1 || day[1] > 31 ? 
+    <div className='calendarDayBox' key={day[1]}>{day[0]} <br /> {'X'}</div> : 
+    <div className='calendarDayBox' key={day.keys}>{day[0]} <br /> {day[1]}</div>
    )))}
+
+const handleInputChange = (event) => {
+    setSelectedMonth(event.target.value);
+  };
 
   return (
     <div className="calendarMainBox">
-        <p className='calendarHeading'>Calendar</p>
-
-<div className='calendarSubBox'>
-    {week()}
-
-    {console.log(week())}
-</div>
-{console.log(newDays.sunday)}
-{console.log(newDays.monday)}
+    <p className='calendarHeading'>{selectedMonth}</p>
+    <div>
+        <input
+          type="text"
+          list="months"
+          value={selectedMonth}
+          onChange={handleInputChange}
+          placeholder="Select a month"
+        />
+        <datalist id="months">
+          {months.map((month) => (
+            <option key={month} value={month} />
+          ))}
+        </datalist>
+      </div>
+    <input type="text" placeholder='starts on...'/>
+    <div className='calendarSubBox'>
+        {week()}
+        {console.log(week())}
     </div>
+ 
+    </div>
+
+
   )
 }
+
+
