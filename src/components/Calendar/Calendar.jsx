@@ -15,10 +15,19 @@ how to build a calendar
     
 */}
 
-const [ month, setMonth ] = useState('')
 const [ firstDay, setFirstDay ] = useState('');
 const [ monthLength, setMonthLength ] = useState(0);
 const [selectedMonth, setSelectedMonth] = useState('');
+
+const daysOfWeek = [
+    'sunday', 
+    'monday', 
+    'tuesday' , 
+    'wednesday', 
+    'thursday', 
+    'friday', 
+    'saturday'
+]
 
 const months = [
     "January",
@@ -99,24 +108,51 @@ const newDays = {
     saturday: days.map(dayData => [dayData[0], dayData[1] - 6] ),
 }
 
-const week = () => { 
-    return (
-   newDays.sunday.map((day) => (
-    day[1] < 1 || day[1] > 31 ? 
-    <div className='calendarDayBox' key={day[1]}>{day[0]} <br /> {'X'}</div> : 
-    <div className='calendarDayBox' key={day.keys}>{day[0]} <br /> {day[1]}</div>
-   )))}
+const week = (monthLength, first ) => { 
+   
+        if (!first) {
+          return( newDays['sunday'].map((day) => (
+                day[1] < 1 || day[1] > monthLength ? 
+                <div className='calendarDayBox' key={day[1]}>{day[0]} <br /> {'X'}</div> : 
+                <div className='calendarDayBox' key={day.keys}>{day[0]} <br /> {day[1]}</div>
+               )))
+        } else {
+           return( newDays[first].map((day) => (
+                day[1] < 1 || day[1] > monthLength ? 
+                <div className='calendarDayBox' key={day[1]}>{day[0]} <br /> {'X'}</div> : 
+                <div className='calendarDayBox' key={day.keys}>{day[0]} <br /> {day[1]}</div>
+               )))
+        }
+  }
 
 const handleInputChange = (event) => {
     setSelectedMonth(event.target.value);
+    setMonthLength(monthDays[event.target.value])
+  
   };
+
+  const handleFirstDay = (event) => {
+    if (!event) {
+       return "sunday"
+    } else {
+        setFirstDay(event.target.value)
+    }
+    
+
+  }
+
+// const handleReset = () => {
+//     setMonthLength(0)
+// }
+
+
 
   return (
     <div className="calendarMainBox">
     <p className='calendarHeading'>{selectedMonth}</p>
     <div>
         <input
-          type="text"
+       
           list="months"
           value={selectedMonth}
           onChange={handleInputChange}
@@ -127,11 +163,24 @@ const handleInputChange = (event) => {
             <option key={month} value={month} />
           ))}
         </datalist>
-      </div>
-    <input type="text" placeholder='starts on...'/>
+    </div>
+        <input 
+          type="text" 
+          list='daysOfTheWeek'
+          value={firstDay}
+          onChange={handleFirstDay}
+          placeholder='starts on...'
+        />
+          <datalist id="daysOfTheWeek">
+          {daysOfWeek.map((day) => (
+            <option key={day} value={day} />
+          ))}
+        </datalist>
+    {/* <button onClick={handleMonthLength}>month length</button> */}
     <div className='calendarSubBox'>
-        {week()}
-        {console.log(week())}
+        {week(monthLength, firstDay)}
+      
+        {console.log(monthLength)}
     </div>
  
     </div>
