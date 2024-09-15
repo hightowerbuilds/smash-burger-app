@@ -1,24 +1,13 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './Calendar.css'
 
 export default function Calendar() {
 
-{/**
-    
-how to build a calendar
-
-- need to set month
-- need to have a first day of the month ie, tues, fri...
-- need length of month
-- need numbers presented
-- cycle through days of week until reach end of month
-    
-*/}
 
 const [ firstDay, setFirstDay ] = useState('');
 const [ monthLength, setMonthLength ] = useState(0);
 const [selectedMonth, setSelectedMonth] = useState('');
-
+const [ refresh, setRefresh] = useState(true)
 
 const months = [
     '2024-01', 
@@ -52,7 +41,7 @@ const monthsFirstDay = {
 
 const monthDays = {
     "2024-01": 31,
-    '2024-02': 29, // Leap year in 2024
+    '2024-02': 29, 
     '2024-03': 31,
     '2024-04': 30,
     '2024-05': 31,
@@ -131,33 +120,41 @@ const week = (monthLength, first ) => {
         }
   }
 
+const refreshButton = () => {
+      window.location.reload();
+    };
+
 const handleInputChange = (event) => {
+    setRefresh(false)
     setSelectedMonth(event.target.value);
     setMonthLength(monthDays[event.target.value])
     setFirstDay(monthsFirstDay[event.target.value])
   };
 
-
-
   return (
     <div className="calendarMainBox">
     <p className='calendarHeading'>{selectedMonth} 2024</p>
+    {
+    refresh ? 
     <div>
-
-        <input
-          type='month'  
-          list="months"
-          value={selectedMonth}
-          onChange={handleInputChange}
-          placeholder="Select a month"
-        />
-        <datalist id="months">
-          {months.map((month) => (
-            <option key={month} value={month} />
-          ))}
-        </datalist>
-    </div>
-
+      <input
+        type='month'  
+        value={selectedMonth}
+        onChange={handleInputChange}
+        placeholder="Select a month"
+      />
+      <datalist id="months">
+        {months.map((month) => (
+          <option key={month} value={month} />
+        ))}
+      </datalist>
+    </div> :  
+    <button onClick={refreshButton}>
+        refresh
+    </button>
+    }
+    
+   
     <div className='calendarSubBox'>
         {week(monthLength, firstDay)}      
         {console.log( typeof selectedMonth)}
