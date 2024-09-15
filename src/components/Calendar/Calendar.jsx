@@ -45,22 +45,22 @@ const monthsFirstDay = {
     '2024-07': 'monday',
     '2024-08': 'thursday',
     '2024-09': 'sunday',
-   '2024-10': 'tuesday',
-   '2024-11': 'friday',
+    '2024-10': 'tuesday',
+    '2024-11': 'friday',
     '2024-12': 'sunday',
 }
 
 const monthDays = {
     "2024-01": 31,
-   '2024-02': 29, // Leap year in 2024
-   '2024-03': 31,
+    '2024-02': 29, // Leap year in 2024
+    '2024-03': 31,
     '2024-04': 30,
     '2024-05': 31,
     '2024-06': 30,
     '2024-07': 31,
     '2024-08': 31,
     '2024-09': 30,
-   '2024-10': 31,
+    '2024-10': 31,
     '2024-11': 30,
     '2024-12': 31
   };
@@ -138,14 +138,6 @@ const handleInputChange = (event) => {
   };
 
 
-const handleReset = () => {
-    setMonthLength(0)
-    setFirstDay('')
-    setSelectedMonth('')
-    
-}
-
-
 
   return (
     <div className="calendarMainBox">
@@ -165,23 +157,9 @@ const handleReset = () => {
           ))}
         </datalist>
     </div>
- 
-        {/* <input 
-          type="text" 
-          list='daysOfTheWeek'
-          value={firstDay}
-          onChange={handleFirstDay}
-          placeholder='starts on...'
-        />
-          <datalist id="daysOfTheWeek">
-          {daysOfWeek.map((day) => (
-            <option key={day} value={day} />
-          ))}
-        </datalist> */}
-    {/* <button onClick={handleMonthLength}>month length</button> */}
+
     <div className='calendarSubBox'>
-        {week(monthLength, firstDay)}
-      
+        {week(monthLength, firstDay)}      
         {console.log( typeof selectedMonth)}
     </div>
  
