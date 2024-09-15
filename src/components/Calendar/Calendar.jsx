@@ -9,6 +9,7 @@ const [ monthLength, setMonthLength ] = useState(0);
 const [selectedMonth, setSelectedMonth] = useState('');
 const [ refresh, setRefresh] = useState(true)
 
+
 const months = [
     '2024-01', 
     '2024-02', 
@@ -104,6 +105,36 @@ const newDays = {
     saturday: days.map(dayData => [dayData[0], dayData[1] - 6] ),
 }
 
+const nameSwitch = (selectedMonth) => {
+    if (selectedMonth === '2024-01') {
+        return 'January'
+    } else if (selectedMonth === '2024-02') {
+        return 'February'
+    } else if (selectedMonth === '2024-03') {
+        return 'March'
+    } else if (selectedMonth === '2024-04') {
+        return 'April'
+    } else if (selectedMonth === '2024-05') {
+        return 'May'
+    } else if (selectedMonth === '2024-06') {
+        return 'June'
+    } else if (selectedMonth === '2024-07') {
+        return 'July'
+    } else if (selectedMonth === '2024-08') {
+        return 'August'
+    } else if (selectedMonth === '2024-09') {
+        return 'September'
+    } else if (selectedMonth === '2024-10') {
+        return 'October'
+    } else if (selectedMonth === '2024-11') {
+        return 'November'
+    } else if (selectedMonth === '2024-12'){
+        return 'December'
+    } else {
+        return 'Pick a Month'
+    }
+}
+
 const week = (monthLength, first ) => { 
         if (!first) {
           return( newDays['sunday'].map((day) => (
@@ -133,7 +164,8 @@ const handleInputChange = (event) => {
 
   return (
     <div className="calendarMainBox">
-    <p className='calendarHeading'>{selectedMonth} 2024</p>
+        <h3>Smash Burger Calendar</h3>
+    <p className='calendarHeading'>{nameSwitch(selectedMonth)} 2024</p>
     {
     refresh ? 
     <div>
@@ -150,7 +182,7 @@ const handleInputChange = (event) => {
       </datalist>
     </div> :  
     <button onClick={refreshButton}>
-        refresh
+       CHOOSE A NEW MONTH
     </button>
     }
     

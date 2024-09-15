@@ -9,7 +9,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    font-family: 'Courier New', Courier, monospace;
+    font-family:  monospace;
     font-weight: 900;
     font-size: 32px;
 }
@@ -17,7 +17,8 @@
 .calendarDayBox {
     height: 5vh;
     width: fit-content;
-    border: 2px black solid;
+    border: 1px black solid;
+    border-radius: 2%;
     margin: 1%;
     padding: 2%;
 }

@@ -15,6 +15,12 @@ export default function HomePage() {
     <div className='homePageSectionSubBox'>
         
         <Calendar />
+     
+
+    </div>
+    <div className='homePageSectionSubBox'>
+        
+    
         <Gallery />
 
     </div>
