@@ -1,6 +1,5 @@
 
-import Calendar from '../../components/Calendar/Calendar'
-import Gallery from '../../components/Gallery/Gallery'
+import smashBurgerLargeLogo from '../../images/browser/smashBurgerLargeLogo.png'
 import NavBar from '../../components/NavBar/NavBar'
 import './HomePage.css'
 
@@ -12,18 +11,7 @@ export default function HomePage() {
 
 
     <div className='homePageSectionOuterBox'>
-    <div className='homePageSectionSubBox'>
-        
-        <Calendar />
-     
-
-    </div>
-    <div className='homePageSectionSubBox'>
-        
-    
-        <Gallery />
-
-    </div>
+      <img src={smashBurgerLargeLogo} alt="" />
     </div>
 
     </div>

@@ -1,13 +1,24 @@
 
+import './MediaPage.css'
+import Calendar from "../../components/Calendar/Calendar";
+import Gallery from "../../components/Gallery/Gallery";
 import NavBar from "../../components/NavBar/NavBar";
 
 
 export default function MediaPage() {
   return (
-    <div>
+    <div >
      <NavBar />
+      <div className="mediaPageSectionOuterBox">
+      <div className='mediaPageSectionSubBox'>
+        <Calendar />
+      </div>
 
-    media
+      <div className='mediaPageSectionSubBox'>
+        <Gallery />
+      </div>
+      </div>
+    
     </div>
   )
 }
