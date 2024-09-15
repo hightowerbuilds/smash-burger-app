@@ -19,45 +19,52 @@ const [ firstDay, setFirstDay ] = useState('');
 const [ monthLength, setMonthLength ] = useState(0);
 const [selectedMonth, setSelectedMonth] = useState('');
 
-const daysOfWeek = [
-    'sunday', 
-    'monday', 
-    'tuesday' , 
-    'wednesday', 
-    'thursday', 
-    'friday', 
-    'saturday'
-]
 
 const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December"
-  ];
+    '2024-01', 
+    '2024-02', 
+    '2024-03', 
+    '2024-04', 
+    '2024-05', 
+    '2024-06', 
+    '2024-07', 
+    '2024-08', 
+    '2024-09', 
+    '2024-10', 
+    '2024-11', 
+    '2024-12'
+];
+
+const monthsFirstDay = {
+    "2024-01": 'monday',
+    '2024-02': 'thursday',
+    '2024-03': 'friday',
+    '2024-04': 'monday',
+    '2024-05': 'wednesday',
+    '2024-06': 'saturday',
+    '2024-07': 'monday',
+    '2024-08': 'thursday',
+    '2024-09': 'sunday',
+   '2024-10': 'tuesday',
+   '2024-11': 'friday',
+    '2024-12': 'sunday',
+}
 
 const monthDays = {
-    "January": 31,
-    "February": 29, // Leap year in 2024
-    "March": 31,
-    "April": 30,
-    "May": 31,
-    "June": 30,
-    "July": 31,
-    "August": 31,
-    "September": 30,
-    "October": 31,
-    "November": 30,
-    "December": 31
+    "2024-01": 31,
+   '2024-02': 29, // Leap year in 2024
+   '2024-03': 31,
+    '2024-04': 30,
+    '2024-05': 31,
+    '2024-06': 30,
+    '2024-07': 31,
+    '2024-08': 31,
+    '2024-09': 30,
+   '2024-10': 31,
+    '2024-11': 30,
+    '2024-12': 31
   };
+
   const days = [
     ["sunday", 1], 
     ["monday", 2], 
@@ -109,7 +116,6 @@ const newDays = {
 }
 
 const week = (monthLength, first ) => { 
-   
         if (!first) {
           return( newDays['sunday'].map((day) => (
                 day[1] < 1 || day[1] > monthLength ? 
@@ -128,31 +134,26 @@ const week = (monthLength, first ) => {
 const handleInputChange = (event) => {
     setSelectedMonth(event.target.value);
     setMonthLength(monthDays[event.target.value])
-  
+    setFirstDay(monthsFirstDay[event.target.value])
   };
 
-  const handleFirstDay = (event) => {
-    if (!event) {
-       return "sunday"
-    } else {
-        setFirstDay(event.target.value)
-    }
+
+const handleReset = () => {
+    setMonthLength(0)
+    setFirstDay('')
+    setSelectedMonth('')
     
-
-  }
-
-// const handleReset = () => {
-//     setMonthLength(0)
-// }
+}
 
 
 
   return (
     <div className="calendarMainBox">
-    <p className='calendarHeading'>{selectedMonth}</p>
+    <p className='calendarHeading'>{selectedMonth} 2024</p>
     <div>
+
         <input
-       
+          type='month'  
           list="months"
           value={selectedMonth}
           onChange={handleInputChange}
@@ -164,7 +165,8 @@ const handleInputChange = (event) => {
           ))}
         </datalist>
     </div>
-        <input 
+ 
+        {/* <input 
           type="text" 
           list='daysOfTheWeek'
           value={firstDay}
@@ -175,12 +177,12 @@ const handleInputChange = (event) => {
           {daysOfWeek.map((day) => (
             <option key={day} value={day} />
           ))}
-        </datalist>
+        </datalist> */}
     {/* <button onClick={handleMonthLength}>month length</button> */}
     <div className='calendarSubBox'>
         {week(monthLength, firstDay)}
       
-        {console.log(monthLength)}
+        {console.log( typeof selectedMonth)}
     </div>
  
     </div>
