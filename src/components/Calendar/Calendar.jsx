@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import './Calendar.css'
 
 export default function Calendar() {
@@ -154,15 +154,12 @@ const handleInputChange = (event) => {
     </button>
     }
     
-   
     <div className='calendarSubBox'>
         {week(monthLength, firstDay)}      
         {console.log( typeof selectedMonth)}
     </div>
- 
+
     </div>
-
-
   )
 }
 
