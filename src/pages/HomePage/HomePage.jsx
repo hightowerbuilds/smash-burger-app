@@ -12,14 +12,14 @@ export default function HomePage() {
 
     <div className='homePageSectionOuterBox'>
       <div className='homePageSectionSubBox'>
-      <img src={smashBurgerLargeLogo} alt="" />
+      <img className='homePageSmashLogo' src={smashBurgerLargeLogo} />
       </div>
     
     </div>
 
 <div className='homePageSectionOuterBox'>
     <div className='homePageSectionSubBox'>
-
+<img src="" alt="" />
     </div>
 </div>
     </div>
